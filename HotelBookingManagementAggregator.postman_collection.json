@@ -1,0 +1,232 @@
+{
+	"info": {
+		"_postman_id": "52c2909d-97e8-43b2-a341-c9c19c4856f6",
+		"name": "HotelBookingManagementAggregator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29849722"
+	},
+	"item": [
+		{
+			"name": "RegisterUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"kjM3@gmail.com\",\n    \"firstName\": \"kj\",\n    \"lastName\": \"kj\",\n    \"password\": \"kunal\",\n    \"role\": \"MANAGER\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"kj@gmail.com\",\n    \"password\": \"kunal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "GetAll Users Admin Access Only",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrakBnbWFpbC5jb20iLCJpYXQiOjE3MTQzMjUyMjgsImV4cCI6MTcxNDQxMTYyOH0.s73KptqtxqIMe1EjxsGgTIVkaRon3XTsrzCek4mz3EA"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/admin/allUsers"
+			},
+			"response": []
+		},
+		{
+			"name": "GetUser By UserName Admin AcessOnly",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrakBnbWFpbC5jb20iLCJpYXQiOjE3MTQzMjUyMjgsImV4cCI6MTcxNDQxMTYyOH0.s73KptqtxqIMe1EjxsGgTIVkaRon3XTsrzCek4mz3EA"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/admin/users/kj@gmail.com"
+			},
+			"response": []
+		},
+		{
+			"name": "Get all hotel complete details: ADMIN",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrakBnbWFpbC5jb20iLCJpYXQiOjE3MTQzMjUyMjgsImV4cCI6MTcxNDQxMTYyOH0.s73KptqtxqIMe1EjxsGgTIVkaRon3XTsrzCek4mz3EA"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/admin/allHotels"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Hotels Bookings : ADMIN",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrak1hbmFnZXJAZ21haWwuY29tIiwiaWF0IjoxNzE0MzI1NjM0LCJleHAiOjE3MTQ0MTIwMzR9.vxDDL55wVl0SiCORLDO0XFc9Aq8ydZEsm7vTqIaOYhQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/admin/allBookings"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateHotel : ADMIN",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrakBnbWFpbC5jb20iLCJpYXQiOjE3MTQzMjUyMjgsImV4cCI6MTcxNDQxMTYyOH0.s73KptqtxqIMe1EjxsGgTIVkaRon3XTsrzCek4mz3EA"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"hotelName\": \"Sunset Beach Resort\",\n    \"location\": \"Maui, Hawaii, USA\",\n    \"description\": \"Discover the beauty of Maui at the Sunset Beach Resort. Located on the shores of a pristine beach, our resort offers stunning ocean views, tropical gardens, and luxurious villas. Relax by the pool, explore the island's natural wonders, and experience the magic of a Hawaiian sunset at Sunset Beach Resort.\",\n    \"availableRooms\" : 41,\n    \"hotelManagerEmail\": \"kjM3@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8081/admin/createHotel"
+			},
+			"response": []
+		},
+		{
+			"name": "All Hotels : Public EndPoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/hotels"
+			},
+			"response": []
+		},
+		{
+			"name": "PaticularHotel : Public Access",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/hotels/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Book hotel room : CUSTOMER",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrdW5hbEBnbWFpbC5jb20iLCJpYXQiOjE3MTQzMjUyNjksImV4cCI6MTcxNDQxMTY2OX0.gGooZadclJzEf0GaOxJ0ABTormCawTA5cQ3s4hlLpfQ"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:8081/hotels/1/book"
+			},
+			"response": []
+		},
+		{
+			"name": "Get LoggedIn Customer's Bookings : CUSTOMER",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrdW5hbEBnbWFpbC5jb20iLCJpYXQiOjE3MTQzMjUyNjksImV4cCI6MTcxNDQxMTY2OX0.gGooZadclJzEf0GaOxJ0ABTormCawTA5cQ3s4hlLpfQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/bookings/myBookings/6"
+			},
+			"response": []
+		},
+		{
+			"name": "Check-in Using BookingID: CUSTOMER/MANGER Access",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrdW5hbEBnbWFpbC5jb20iLCJpYXQiOjE3MTQzMjUyNjksImV4cCI6MTcxNDQxMTY2OX0.gGooZadclJzEf0GaOxJ0ABTormCawTA5cQ3s4hlLpfQ"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8081/bookings/7/check-in"
+			},
+			"response": []
+		},
+		{
+			"name": "Check-out Using BookingID: CUSTOMER/MANGER Access",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8081/bookings/7/check-out"
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel/Delete Booking : Manager Access",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrak1hbmFnZXJAZ21haWwuY29tIiwiaWF0IjoxNzE0MzI1NjM0LCJleHAiOjE3MTQ0MTIwMzR9.vxDDL55wVl0SiCORLDO0XFc9Aq8ydZEsm7vTqIaOYhQ"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:8081/bookings/6/cancelBooking"
+			},
+			"response": []
+		},
+		{
+			"name": "Get LoggedIn User Deatails : LoggedIn access",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJrak1hbmFnZXJAZ21haWwuY29tIiwiaWF0IjoxNzE0MzI1NjM0LCJleHAiOjE3MTQ0MTIwMzR9.vxDDL55wVl0SiCORLDO0XFc9Aq8ydZEsm7vTqIaOYhQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8081/users/myAccount"
+			},
+			"response": []
+		}
+	]
+}
