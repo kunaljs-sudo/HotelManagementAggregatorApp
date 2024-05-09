@@ -2,6 +2,8 @@
 
 ### [Jar](https://drive.google.com/drive/folders/1RDgtIy9zG0qTLmgX1E7SnUSDH3GEB7ql?usp=drive_link)
 
+---
+
 This file can be used as a template for initializing and running spring projects.
 
 What's included:
