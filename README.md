@@ -46,21 +46,21 @@ This project utilizes Spring Security to handle authentication and authorization
 - /hotels/{hotelId}
 - /swagger-ui.html : for API documentation
 
-- ### Need to be added:
+### Need to be added:
 
-  - #### mysql-config.properties
+- #### mysql-config.properties
 
-    - mysql.host=hostname
-    - mysql.port=portname
-    - mysql.database=dbname
-    - mysql.username=username
-    - mysql.password=password
+  - mysql.host=hostname
+  - mysql.port=portname
+  - mysql.database=dbname
+  - mysql.username=username
+  - mysql.password=password
 
-  - ### application.properties
+- #### application.properties
 
-    inside application.properties add your own secret key
+  inside application.properties add your own secret key
 
-    - application.security.jwt.secret-key=YourSecretKey(256Bit Hashed Key)
+  - application.security.jwt.secret-key=YourSecretKey(256Bit Hashed Key)
 
 ## If you want to run in local
 
