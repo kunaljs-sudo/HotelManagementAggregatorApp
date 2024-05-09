@@ -15,11 +15,15 @@ What's included:
 
 Usage -
 
-1. To build the repository -
+- To build the repository -
 
-From the repository root,
+  From the repository root,
 
-1. run `./gradlew clean build -x test`run the build to create executable jar. The jar will be located inside build directories
+  - run command in terminal `./gradlew clean build -x test` to create executable jar. The jar will be located inside build directories
+
+## Port Used
+
+To run the server defined port is **8081**
 
 ## Authentication with Spring Security
 
@@ -27,10 +31,14 @@ This project utilizes Spring Security to handle authentication and authorization
 
 ### API for Auth:
 
+(http://localhost:8081)
+
 - /auth/login
 - /auth/register
 
 #### Public APIS
+
+(http://localhost:8081)
 
 - /auth/login
 - /auth/register
